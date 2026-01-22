@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    char name[50];
+    float basic, houserent, used, gross;
+
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        printf("\nEmployee %d Details:\n", i);
+        printf("Enter name: ");
+        scanf(" %[^\n]", name); 
+        printf("Enter basic salary: ");
+        scanf("%f", &basic);
+
+        houserent = 0.10 * basic; 
+        used = 0.05 * basic;   
+        gross = basic + houserent + used;
+
+        printf("\n--- Salary Slip ---\n");
+        printf("Employee Name: %s\n", name);
+        printf("Basic Salary : %.2f\n", basic);
+        printf("HRA (10%%)    : %.2f\n", houserent);
+        printf("DA (5%%)      : %.2f\n", used);
+        printf("Gross Salary : %.2f\n", gross);
+        printf("------------------\n");
+    }
+
+    return 0;
+}
