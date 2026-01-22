@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    float temp[7], max, min;
+    int i;
+
+    printf("Enter temperatures for 7 days:\n");
+    for(i = 0; i < 7; i++) {
+        printf("Day %d: ", i + 1);
+        scanf("%f", &temp[i]);
+    }
+
+    max = min = temp[0];  // initialize
+
+    for(i = 1; i < 7; i++) {
+        if(temp[i] > max)
+            max = temp[i];
+        if(temp[i] < min)
+            min = temp[i];
+    }
+
+    printf("\nHighest temperature = %.2f\n", max);
+    printf("Lowest temperature = %.2f\n", min);
+
+    return 0;
+}
