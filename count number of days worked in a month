@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int totalDays, workedDays;
+
+    printf("Enter total days in the month: ");
+    scanf("%d", &totalDays);
+
+    printf("Enter number of days worked: ");
+    scanf("%d", &workedDays);
+
+    if(workedDays > totalDays) {
+        printf("Invalid input! Worked days cannot be more than total days.\n");
+    } else {
+        printf("Number of days worked = %d\n", workedDays);
+        printf("Number of days not worked = %d\n", totalDays - workedDays);
+    }
+
+    return 0;
+}
