@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+int validateLogin(char username[], char password[]) {
+    char correctUsername[] = "admin";
+    char correctPassword[] = "1234";
+
+    if(strcmp(username, correctUsername) == 0 && strcmp(password, correctPassword) == 0)
+        return 1;  
+    else
+        return 0;  
+}
+
+int main() {
+    char username[50], password[50];
+
+    printf("Enter username: ");
+    scanf("%s", username);
+
+    printf("Enter password: ");
+    scanf("%s", password);
+
+    if(validateLogin(username, password))
+        printf("Login Successful!\n");
+    else
+        printf("Invalid Username or Password\n");
+
+    return 0;
+}
