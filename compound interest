@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double Principal, rate, time, Tamount, CI;
+
+    printf("Enter principal amount: ");
+    scanf("%lf", &Principal);
+
+    printf("Enter annual interest rate (in %%): ");
+    scanf("%lf", &rate);
+
+    printf("Enter time (in years): ");
+    scanf("%lf", &time);
+
+    Tamount = Principal * pow(1 + rate/100, time);  
+    CI = Tamount - Principal;                
+
+    printf("Compound Interest = %.2lf\n", CI);
+    printf("Total Amount = %.2lf\n", Tamount);
+
+    return 0;
+}
