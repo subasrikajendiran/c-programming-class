@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    float marks[50], max;
+    char name[50][50], topper[50];
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter name of student %d: ", i + 1);
+        scanf(" %[^\n]", name[i]);  // read full name including spaces
+        printf("Enter marks of %s: ", name[i]);
+        scanf("%f", &marks[i]);
+    }
+
+    max = marks[0];
+    strcpy(topper, name[0]);
+
+    for(i = 1; i < n; i++) {
+        if(marks[i] > max) {
+            max = marks[i];
+            strcpy(topper, name[i]);
+        }
+    }
+
+    printf("\nTopper: %s with %.2f marks\n", topper, max);
+
+    return 0;
+}
