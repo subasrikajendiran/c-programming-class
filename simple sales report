@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    float sale, total = 0;
+
+    printf("Enter number of days: ");
+    scanf("%d", &n);
+
+    float dailySales[n];
+
+    for(i = 0; i < n; i++) {
+        printf("Enter sales for day %d: ", i + 1);
+        scanf("%f", &dailySales[i]);
+        total += dailySales[i];
+    }
+
+    printf("\nDaily Sales Report:\n");
+    printf("-------------------\n");
+    for(i = 0; i < n; i++) {
+        printf("Day %d: %.2f\n", i + 1, dailySales[i]);
+    }
+    printf("-------------------\n");
+    printf("Total Sales: %.2f\n", total);
+
+    return 0;
+}
