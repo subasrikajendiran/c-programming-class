@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int id;
+    char name[50];
+};
+
+int main() {
+    int n, i, searchId, found = 0;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    struct Student students[n];
+    for(i=0;i<n;i++){
+        printf("ID: "); scanf("%d",&students[i].id);
+        printf("Name: "); scanf(" %[^\n]", students[i].name);
+    }
+
+    printf("Enter ID to update: ");
+    scanf("%d",&searchId);
+
+    for(i=0;i<n;i++){
+        if(students[i].id == searchId){
+            printf("Enter new ID: "); scanf("%d",&students[i].id);
+            printf("Enter new Name: "); scanf(" %[^\n]", students[i].name);
+            printf("Updated -> ID: %d, Name: %s\n", students[i].id, students[i].name);
+            found = 1; break;
+        }
+    }
+    if(!found) printf("ID %d not found.\n", searchId);
+    return 0;
+}
