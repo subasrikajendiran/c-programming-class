@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+// Structure for Bank Account
+struct BankAccount {
+    int accountNumber;
+    char name[50];
+    float balance;
+};
+
+int main() {
+    struct BankAccount acc;
+    int choice;
+    float amount;
+
+    // Input account details
+    printf("Enter Account Number: ");
+    scanf("%d", &acc.accountNumber);
+
+    printf("Enter Account Holder Name: ");
+    scanf(" %[^\n]", acc.name);
+
+    printf("Enter Initial Balance: ");
+    scanf("%f", &acc.balance);
+
+    // Menu
+    printf("\n1. Deposit\n2. Withdraw\n3. Display Balance\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1:
+            printf("Enter amount to deposit: ");
+            scanf("%f", &amount);
+            acc.balance += amount;
+            printf("Updated Balance = %.2f\n", acc.balance);
+            break;
+
+        case 2:
+            printf("Enter amount to withdraw: ");
+            scanf("%f", &amount);
+            if(amount <= acc.balance) {
+                acc.balance -= amount;
+                printf("Updated Balance = %.2f\n", acc.balance);
+            } else {
+                printf("Insufficient Balance\n");
+            }
+            break;
+
+        case 3:
+            printf("Account Balance = %.2f\n", acc.balance);
+            break;
+
+        default:
+            printf("Invalid choice\n");
+    }
+
+    return 0;
+}
